@@ -16,7 +16,7 @@ body{background:#111;font-family:'Heebo',sans-serif;display:flex;justify-content
 
 /* אזור לחיץ */
 .btn-zone{
-  position:absolute;left:8%;width:68%;height:8.5%;top:50%;
+  position:absolute;left:4%;width:78%;height:11%;top:46%;
   border-radius:12px;cursor:pointer;background:transparent;
   border:2px solid transparent;transition:background 0.2s,border-color 0.2s;
 }
@@ -24,7 +24,7 @@ body{background:#111;font-family:'Heebo',sans-serif;display:flex;justify-content
 
 /* כפתור תחתון מוחשך */
 .btn-inactive{
-  position:absolute;left:8%;width:68%;height:8.5%;top:57.8%;
+  position:absolute;left:4%;width:78%;height:11%;top:57.8%;
   border-radius:12px;background:rgba(15,15,15,0.55);
   backdrop-filter:blur(2px);pointer-events:none;
 }
@@ -121,7 +121,10 @@ body{background:#111;font-family:'Heebo',sans-serif;display:flex;justify-content
   <div class="panel">
     <div class="panel-header">
       <div class="panel-handle"></div>
-      <div class="panel-badge">📄 שלב 1 — מסמך הצטרפות</div>
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:6px;">
+        <button onclick="document.getElementById('overlay1').classList.remove('visible')" style="background:none;border:none;font-size:22px;cursor:pointer;color:#aaa;line-height:1;padding:0;">✕</button>
+        <div class="panel-badge">📄 שלב 1 — מסמך הצטרפות</div>
+      </div>
       <div class="panel-title">מסמך הצטרפות לחברות</div>
     </div>
     <div class="panel-body" id="docBody" onscroll="checkDocScroll()">
@@ -173,7 +176,11 @@ body{background:#111;font-family:'Heebo',sans-serif;display:flex;justify-content
   <div class="panel">
     <div class="panel-header">
       <div class="panel-handle"></div>
-      <div class="panel-badge">📋 שלב 2 — תקנון העמותה</div>
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:6px;">
+        <button onclick="document.getElementById('overlay2').classList.remove('visible')" style="background:none;border:none;font-size:22px;cursor:pointer;color:#aaa;line-height:1;padding:0;">✕</button>
+        <div class="panel-badge">📋 שלב 2 — תקנון העמותה</div>
+        <button onclick="document.getElementById('overlay2').classList.remove('visible');document.getElementById('overlay1').classList.add('visible')" style="background:none;border:none;font-size:14px;cursor:pointer;color:#1a5fa8;font-family:Heebo,sans-serif;font-weight:700;padding:0;">→ חזרה</button>
+      </div>
       <div class="panel-title">תקנון עמותת "ילדים בסיכוי"</div>
     </div>
     <div class="panel-body" id="takanonBody" onscroll="checkTakanonScroll()">
